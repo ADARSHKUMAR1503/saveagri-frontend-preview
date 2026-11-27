@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Hind Madurai", system-ui, sans-serif;
+  --font-display: "Poppins", system-ui, sans-serif;
+  --color-brand-50: #f0f7ee;
+  --color-brand-100: #dcecd6;
+  --color-brand-600: #2f7d32;
+  --color-brand-700: #256528;
+  --color-brand-900: #14381a;
+  --color-soil: #8a5a2b;
+  --color-harvest: #e0a526;
+}
+
+body { @apply bg-stone-50 text-stone-800 font-sans; }
+h1, h2, h3 { font-family: var(--font-display); }
+:focus-visible { outline: 2px solid var(--color-brand-600); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+.card-in { animation: card-in 0.5s ease-out both; }
+
+@keyframes hero-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+.hero-zoom { animation: hero-zoom 5s linear forwards; }
+
+@keyframes hero-text-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-text-in { animation: hero-text-in 0.9s ease-out both; }
